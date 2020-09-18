@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService {
     @Inject
     private UserDao userDao;
 
-    public void getUser() {
-        userDao.getUser();
+    public String getUser() {
+        return userDao.getUser();
     }
 }

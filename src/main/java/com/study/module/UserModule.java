@@ -9,6 +9,6 @@ import com.study.service.UserServiceImpl;
 public class UserModule extends AbstractModule {
     protected void configure() {
         bind(UserDao.class).to(UserDaoImpl.class);
-//        bind(UserService.class).to(UserServiceImpl.class);
+        bind(UserService.class).to(UserServiceImpl.class);
     }
 }

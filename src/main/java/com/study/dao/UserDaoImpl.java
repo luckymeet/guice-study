@@ -5,8 +5,9 @@ import com.google.inject.Singleton;
 @Singleton
 public class UserDaoImpl implements UserDao {
 
-    public void getUser() {
+    public String getUser() {
         System.out.println("get user name is ac");
+        return null;
     }
 
 }

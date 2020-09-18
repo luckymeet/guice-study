@@ -8,11 +8,48 @@
     <artifactId>guice-study</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <jersey.version>2.31</jersey.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>4.0</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.sun.jersey.contribs</groupId>-->
+<!--            <artifactId>jersey-guice</artifactId>-->
+<!--            <version>1.9</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-moxy</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.jersey.core</groupId>-->
+<!--            <artifactId>jersey-common</artifactId>-->
+<!--            <version>${jersey.version}</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>9.4.30.v20200611</version>
         </dependency>
     </dependencies>
 
