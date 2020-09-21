@@ -1,11 +1,9 @@
 package com.study.dao;
 
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 @Singleton
-@Named("userDaoImpl")
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl1 implements UserDao {
 
     @Override
     public String getUser() {

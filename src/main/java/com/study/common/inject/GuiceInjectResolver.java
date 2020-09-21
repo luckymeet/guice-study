@@ -1,12 +1,9 @@
-package com.study.resource;
+package com.study.common.inject;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.glassfish.hk2.api.Injectee;
 import org.glassfish.hk2.api.InjectionResolver;
 import org.glassfish.hk2.api.ServiceHandle;
-
-import javax.inject.Named;
 
 /**
  * @author yuminjun yuminjun@lexiangbao.com
@@ -23,24 +20,25 @@ import javax.inject.Named;
 public class GuiceInjectResolver implements InjectionResolver<com.google.inject.Inject> {
 
     @javax.inject.Inject
-    @Named(InjectionResolver.SYSTEM_RESOLVER_NAME)
-    InjectionResolver<javax.inject.Inject> systemInjectionResolver;
-
-    Injector injector = Guice.createInjector();
+    Injector injector;
 
 
+    @Override
     public Object resolve(Injectee injectee, ServiceHandle<?> serviceHandle) {
-        if (com.google.inject.Inject.class == injectee.getRequiredType()) {
-//            return systemInjectionResolver.resolve(injectee, serviceHandle);
-            return injector.getInstance(injectee.getInjecteeClass());
+        try {
+            return injector.getInstance(Class.forName(injectee.getRequiredType().getTypeName()));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
         return null;
     }
 
+    @Override
     public boolean isConstructorParameterIndicator() {
         return false;
     }
 
+    @Override
     public boolean isMethodParameterIndicator() {
         return false;
     }

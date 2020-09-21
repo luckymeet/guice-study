@@ -1,7 +1,10 @@
 package com.study.config;
 
+import com.google.inject.Guice;
 import com.google.inject.Inject;
-import com.study.resource.GuiceInjectResolver;
+import com.google.inject.Injector;
+import com.study.common.inject.GuiceInjectResolver;
+import com.study.module.UserModule;
 import org.glassfish.hk2.api.InjectionResolver;
 import org.glassfish.hk2.api.TypeLiteral;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
@@ -28,6 +31,7 @@ public class JerseyConfig extends ResourceConfig {
         register(new AbstractBinder() {
             @Override
             protected void configure() {
+                bind(Guice.createInjector(new UserModule())).to(Injector.class);
                 bind(GuiceInjectResolver.class)
                         .to(new TypeLiteral<InjectionResolver<Inject>>(){})
                         .in(Singleton.class);
