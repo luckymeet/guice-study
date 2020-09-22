@@ -1,10 +1,6 @@
 package com.study;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.study.config.JerseyConfig;
-import com.study.module.UserModule;
-import com.study.service.UserService;
+import com.study.common.config.JerseyConfig;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
