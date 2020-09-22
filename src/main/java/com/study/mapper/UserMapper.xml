@@ -2,8 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.study.mapper.UserMapper">
 
-	<select id="selectUser" resultType="com.study.entity.User">
-		SELECT id, name, age FROM user LIMIT 10
-	</select>
 
+    <select id="selectUser" resultType="com.study.entity.User">
+		SELECT
+			t.id,
+			t.name,
+			t.age
+		FROM sys_user t
+		LIMIT 10
+    </select>
 </mapper>

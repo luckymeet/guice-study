@@ -25,7 +25,6 @@ public abstract class MapperConfig {
         for (Class<?> mapperClass : mapperSet) {
             configuration.addMapper(mapperClass);
         }
-        configuration.addLoadedResource("mapper");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
         return sqlSessionFactory;
     }

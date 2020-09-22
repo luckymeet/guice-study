@@ -8,12 +8,11 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class Application {
     public static void main(String[] args) {
+
         Server server = new Server(8080);
 
-        ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        ServletContextHandler contextHandler = new ServletContextHandler();
         contextHandler.setContextPath("/");
-        server.setHandler(contextHandler);
-
         contextHandler.addServlet(new ServletHolder(new ServletContainer(new JerseyConfig())), "/*");
 
         server.setHandler(contextHandler);

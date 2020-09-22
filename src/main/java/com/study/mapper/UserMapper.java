@@ -20,7 +20,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-//    @Select("SELECT id, name, age FROM user LIMIT 10")
     List<User> selectUser();
 
 }
