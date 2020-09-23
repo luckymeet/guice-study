@@ -1,7 +1,7 @@
 package com.study.module;
 
 import com.google.inject.AbstractModule;
-import com.study.common.config.MybatisManager;
+import com.study.common.mybatis.MybatisManager;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 

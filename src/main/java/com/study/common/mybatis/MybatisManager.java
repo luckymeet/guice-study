@@ -1,5 +1,6 @@
-package com.study.common.config;
+package com.study.common.mybatis;
 
+import com.study.common.config.MapperConfig;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 
 import javax.inject.Singleton;
